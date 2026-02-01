@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Trade Manager Guard Pro V1.1</title>
+  <link rel="manifest" href="/manifest.json">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            slate: {
+              850: '#1e293b',
+              900: '#0f172a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    html,
+    body {
+      height: 100%;
+      overflow-y: auto;
+      /* Enable vertical scroll */
+      -webkit-overflow-scrolling: touch;
+    }
+
+    body {
+      font-family: 'Inter', 'Tajawal', sans-serif;
+      @apply bg-slate-900 text-slate-200 transition-colors duration-300;
+    }
+
+    html.light body {
+      @apply bg-gray-50 text-black;
+      /* STRICT BLACK TEXT */
+    }
+
+    /* Ensure inputs are readable in light mode */
+    html.light input,
+    html.light select {
+      @apply text-black border-gray-300;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      @apply bg-slate-900;
+    }
+
+    html.light ::-webkit-scrollbar-track {
+      @apply bg-gray-200;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      @apply bg-slate-700 rounded;
+    }
+
+    html.light ::-webkit-scrollbar-thumb {
+      @apply bg-gray-400;
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.0",
+    "html2canvas": "https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/+esm",
+    "jspdf": "https://aistudiocdn.com/jspdf@^2.5.1",
+    "jspdf-autotable": "https://aistudiocdn.com/jspdf-autotable@^3.8.1",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "exceljs": "https://cdn.jsdelivr.net/npm/exceljs@4.4.0/+esm"
+  }
+}
+</script>
+
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('SW registered: ', registration);
+          })
+          .catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
+    }
+  </script>
+  <script type="module" src="index.tsx"></script>
+</body>
+
+</html>

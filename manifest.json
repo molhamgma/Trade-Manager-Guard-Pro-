@@ -1,0 +1,22 @@
+
+{
+  "name": "Trade Manager Guard Pro V1.1",
+  "short_name": "TradeMgr Pro V1.1",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/7210/7210660.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/7210/7210660.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
