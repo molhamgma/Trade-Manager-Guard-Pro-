@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { AppSettings, Language, Currency } from '../types';
 import { TRANSLATIONS } from '../constants';
@@ -80,7 +79,7 @@ export const SettingsPanel: React.FC<Props> = ({
 
   return (
     <div className="fixed inset-0 z-[80] flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
-      <div className="bg-slate-800 dark:bg-slate-800 bg-white w-full max-w-4xl rounded-2xl shadow-2xl border border-slate-700 dark:border-slate-700 border-gray-200 overflow-hidden flex flex-col max-h-[90vh]">
+      <div className="bg-slate-800 dark:bg-slate-800 bg-white w-full max-w-4xl rounded-2xl shadow-2xl border border-slate-700 dark:border-slate-700 border-gray-200 overflow-hidden flex flex-col ma[...]">
 
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-slate-700 dark:border-slate-700 border-gray-200 bg-slate-900 dark:bg-slate-900 bg-gray-50">
@@ -108,7 +107,7 @@ export const SettingsPanel: React.FC<Props> = ({
             {/* Strategy Name - Full Width */}
             <div className="col-span-full space-y-2 mb-2" data-tour="setting-strategy-name">
               <label className="text-xs font-bold text-slate-400 uppercase tracking-wide">{t.strategyName}</label>
-              <div className="text-[10px] text-slate-500 mb-1">{t.strategyPlaceholder}</div>
+              <div className="text-[12px] text-slate-500 mb-1">{t.strategyPlaceholder}</div>
               <input
                 type="text"
                 value={settings.strategyName || ''}
@@ -166,7 +165,7 @@ export const SettingsPanel: React.FC<Props> = ({
                 value={settings.profitPercentage}
                 onChange={(e) => handleChange('profitPercentage', e.target.value)}
                 placeholder="85"
-                className="w-full bg-slate-900 border border-green-500/50 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-green-500 outline-none placeholder-slate-600 shadow-[0_0_10px_rgba(34,197,94,0.1)] transition"
+                className="w-full bg-slate-900 border border-green-500/50 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-green-500 outline-none placeholder-slate-600 shadow-[0_0_10px_rgb..."
               />
             </div>
 
@@ -221,7 +220,7 @@ export const SettingsPanel: React.FC<Props> = ({
                     className={`relative rounded-xl p-3 border transition-all flex flex-col gap-2 cursor-pointer group ${settings.selectedAssetIndex === idx
                         ? 'border-blue-500 bg-blue-500/10'
                         : 'border-slate-700 bg-slate-900 hover:border-slate-600'
-                      }`}
+                      }`
                     onClick={() => handleAssetSelect(idx)}
                   >
                     <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -234,7 +233,7 @@ export const SettingsPanel: React.FC<Props> = ({
                       type="text"
                       value={asset.name}
                       onChange={(e) => handleAssetChange(idx, 'name', e.target.value)}
-                      className="w-full bg-transparent text-sm font-bold text-slate-200 outline-none border-b border-transparent hover:border-slate-600 focus:border-blue-500 pb-1 transition-colors"
+                      className="w-full bg-transparent text-sm font-bold text-slate-200 outline-none border-b border-transparent hover:border-slate-600 focus:border-blue-500 pb-1 transition-color[...]"
                       placeholder={`Asset ${idx + 1}`}
                       onClick={(e) => e.stopPropagation()}
                       onFocus={() => handleAssetSelect(idx)}
